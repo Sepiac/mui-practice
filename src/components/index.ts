@@ -1,1 +1,2 @@
-export { TabsImpl } from './TabsImpl'
+export * from './TabsImpl'
+export * from './MainMenu'

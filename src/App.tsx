@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'
+import logo from './logo.svg'
 import './App.css';
-import { TabsImpl } from './components'
+import { TabsImpl, MainMenu } from './components'
 
 
 
@@ -9,6 +9,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <MainMenu />
+      </header>
       <body>
         <TabsImpl />
       </body>
