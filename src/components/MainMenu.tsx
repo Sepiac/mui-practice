@@ -29,7 +29,7 @@ export const MainMenu = () => {
       >
         <List>
           <ListItem button >
-            <ListItemIcon><EmojiPeopleIcon /> Hi new friend!</ListItemIcon>
+            <ListItemIcon><EmojiPeopleIcon />Hi new friends!</ListItemIcon>
           </ListItem>
           <Divider />
           <ListItem button >
