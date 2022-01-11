@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { SepiacIcon } from '../icons'
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import FaceIcon from '@mui/icons-material/Face';
+import HailIcon from '@mui/icons-material/Hail';
 
 export const MainMenu = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -33,6 +34,12 @@ export const MainMenu = () => {
           <Divider />
           <ListItem button >
             <ListItemIcon><FaceIcon />Hello</ListItemIcon>
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <HailIcon />
+              Good to see you two!
+            </ListItemIcon>
           </ListItem>
         </List>
       </Drawer>
