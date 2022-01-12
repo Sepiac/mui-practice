@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-import { EasyTabs, TabPanel, MainMenu } from './components'
+import { EasyTabs, TabPanel, MainMenu, SignatureFooter } from './components'
 import { FormControl, FormHelperText, InputLabel, Input, Paper } from '@mui/material'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
@@ -36,6 +36,7 @@ function App() {
           </TabPanel>
         </EasyTabs>
       </body>
+      <SignatureFooter />
     </div>
   );
 }
