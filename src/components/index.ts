@@ -1,2 +1,2 @@
-export * from './TabsImpl'
+export * from './EasyTabs'
 export * from './MainMenu'
