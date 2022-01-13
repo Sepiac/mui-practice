@@ -41,13 +41,13 @@ function FirstMuiDemo() {
 
 function ShyMuiDemo() {
   return (
-    <p>I'm shy</p>
+    <Paper elevation={3} sx={{ m: 5 }}>I'm shy</Paper>
   )
 }
 
 function OutgoingMuiDemo() {
   return (
-    <p>I'm ready for adventure!</p>
+    <Paper elevation={3} sx={{ m: 5 }}>I'm ready for adventure!</Paper>
   )
 }
 
