@@ -1,13 +1,26 @@
 import React, { useState } from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemIcon, Divider } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link, useLocation } from 'react-router-dom'
 import { SepiacIcon } from '../icons'
-import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import FaceIcon from '@mui/icons-material/Face';
 import HailIcon from '@mui/icons-material/Hail';
 
+function getPageIcon(pathName: string) {
+  const style = {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    width: '2rem',
+    marginRight: '1rem'
+  }
+  return (
+    pathName === '/shydemo' ? <FaceIcon style={style} /> : pathName === '/outgoingdemo' ? <HailIcon style={style} /> : <SepiacIcon style={style} />
+  )
+}
+
 export const MainMenu = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const location = useLocation()
   return (
     <div>
       <AppBar position="static">
@@ -16,7 +29,7 @@ export const MainMenu = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" component="div">
-            <SepiacIcon style={{ display: 'inline-block', verticalAlign: 'middle', width: '2rem', marginRight: '1rem' }} />
+            {getPageIcon(location?.pathname)}
             MUI Practice App
           </Typography>
         </Toolbar>
@@ -28,14 +41,19 @@ export const MainMenu = () => {
         onClose={() => setIsDrawerOpen(false)}
       >
         <List>
-          <ListItem button >
-            <ListItemIcon><EmojiPeopleIcon />Hi new friends!</ListItemIcon>
+          <ListItem component={Link} to="/" >
+            <ListItemIcon><SepiacIcon style={{
+              display: 'inline-block',
+              verticalAlign: 'middle',
+              width: '1.5rem',
+              marginRight: '.1rem'
+            }} />Hi new friends!</ListItemIcon>
           </ListItem>
           <Divider />
-          <ListItem button >
-            <ListItemIcon><FaceIcon />Hello</ListItemIcon>
+          <ListItem component={Link} to="/shydemo">
+            <ListItemIcon><FaceIcon />Um... Hi</ListItemIcon>
           </ListItem>
-          <ListItem button>
+          <ListItem component={Link} to="/outgoingdemo">
             <ListItemIcon>
               <HailIcon />
               Good to see you two!
