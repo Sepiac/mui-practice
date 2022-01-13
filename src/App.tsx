@@ -51,32 +51,21 @@ function OutgoingMuiDemo() {
   )
 }
 
-function AppContainer() {
-
-  return (
-    <>
-      <header>
-        <MainMenu />
-      </header>
-      <body>
-        <Outlet />
-      </body>
-      <SignatureFooter />
-    </>
-  )
-}
-
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <header>
+          <MainMenu />
+        </header>
         <Routes>
-          <Route path="/" element={<AppContainer />} >
-            <Route index element={<FirstMuiDemo />}/>
-            <Route path="shydemo" element={<ShyMuiDemo />}/>
-            <Route path="outgoingdemo" element={<OutgoingMuiDemo />}/>
+          <Route path="/" >
+            <Route index element={<FirstMuiDemo />} />
+            <Route path="shydemo" element={<ShyMuiDemo />} />
+            <Route path="outgoingdemo" element={<OutgoingMuiDemo />} />
           </Route>
         </Routes>
+        <SignatureFooter />
       </BrowserRouter>
     </div>
   );
