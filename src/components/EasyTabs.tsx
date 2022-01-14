@@ -41,6 +41,8 @@ interface EasyTabsProps {
   currentTab: number,
   setCurrentTab: Function,
 }
+
+// PRESENTATION: this wrapper for mui tabs is worth pointing out
 export const EasyTabs = (props: EasyTabsProps) => {
   const { children, currentTab, setCurrentTab } = props
   const handleChange = (event: SyntheticEvent<Element, Event>, newValue: number) => {
