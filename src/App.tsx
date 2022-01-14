@@ -11,8 +11,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-  Outlet,
 } from "react-router-dom";
 
 const validateEmail = (emailString: string): boolean => {
