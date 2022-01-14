@@ -42,7 +42,9 @@ export const MainMenu = () => {
         onClose={() => setIsDrawerOpen(false)}
       >
         <List>
+          {/* PRESENTATION: this component prop is strange and worth pointing out. Mention how props are passed to children */}
           <ListItem component={Link} to="/" >
+            {/* PRESENTATION: mui plays nicely with custom icons */}
             <ListItemIcon><SepiacIcon style={{
               display: 'inline-block',
               verticalAlign: 'middle',
