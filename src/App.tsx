@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-import { EasyTabs, TabPanel, MainMenu, SignatureFooter } from './components'
+import { EasyTabs, TabPanel, MainMenu, SignatureFooter, CharacterDemo } from './components'
 import { FormControl, FormHelperText, InputLabel, Input, Paper } from '@mui/material'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
@@ -11,6 +11,8 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
+import FaceIcon from '@mui/icons-material/Face';
+import HailIcon from '@mui/icons-material/Hail';
 
 const validateEmail = (emailString: string): boolean => {
   // eslint-disable-next-line no-control-regex
@@ -40,14 +42,26 @@ function FirstMuiDemo() {
 }
 
 function ShyMuiDemo() {
+  const responses = [
+    'Oh... I don\'t know',
+    'Maybe',
+    '... I think so',
+    'Uh... I guess'
+  ]
   return (
-    <Paper elevation={3} sx={{ m: 5 }}>I'm shy</Paper>
+    <CharacterDemo icon={FaceIcon} responses={responses}/>
   )
 }
 
 function OutgoingMuiDemo() {
+  const responses = [
+    'Absolutely!',
+    'For sure!',
+    'You know it!',
+    'Always!'
+  ]
   return (
-    <Paper elevation={3} sx={{ m: 5 }}>I'm ready for adventure!</Paper>
+    <CharacterDemo icon={HailIcon} responses={responses}/>
   )
 }
 
