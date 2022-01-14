@@ -1,5 +1,5 @@
-import React, { useState, SyntheticEvent } from 'react'
-import { TextField, Grid, Button, InputAdornment, Paper, Box, CircularProgress } from '@mui/material'
+import React, { useState } from 'react'
+import { TextField, Grid, Button, InputAdornment, CircularProgress } from '@mui/material'
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
