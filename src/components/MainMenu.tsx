@@ -63,7 +63,7 @@ export const MainMenu = () => {
           <ListItem component={Link} to="/treeguydemo">
             <ListItemIcon>
               <NaturePeopleIcon />
-              What a beautiful tree!
+              Do you guys like trees?
             </ListItemIcon>
           </ListItem>
         </List>
