@@ -4,6 +4,9 @@ import { EasyTabs, TabPanel, MainMenu, SignatureFooter, CharacterDemo } from './
 import { FormControl, FormHelperText, InputLabel, Input, Paper } from '@mui/material'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import FaceIcon from '@mui/icons-material/Face';
+import HailIcon from '@mui/icons-material/Hail';
+import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
 import {
   BrowserRouter,
   Routes,
@@ -11,8 +14,6 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import FaceIcon from '@mui/icons-material/Face';
-import HailIcon from '@mui/icons-material/Hail';
 
 const validateEmail = (emailString: string): boolean => {
   // eslint-disable-next-line no-control-regex
@@ -65,6 +66,17 @@ function OutgoingMuiDemo() {
   )
 }
 
+function TreeGuyDemo() {
+  const responses = [
+    'I like trees!',
+    'I only talk about trees!',
+    'Have you seen this tree!?',
+  ]
+  return (
+    <CharacterDemo icon={NaturePeopleIcon} responses={responses}/>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -77,6 +89,7 @@ function App() {
             <Route index element={<FirstMuiDemo />} />
             <Route path="shydemo" element={<ShyMuiDemo />} />
             <Route path="outgoingdemo" element={<OutgoingMuiDemo />} />
+            <Route path="treeguydemo" element={<TreeGuyDemo />} />
           </Route>
         </Routes>
         <SignatureFooter />
