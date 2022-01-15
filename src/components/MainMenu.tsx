@@ -43,7 +43,7 @@ export const MainMenu = () => {
       >
         <List>
           {/* PRESENTATION: this component prop is strange and worth pointing out. Mention how props are passed to children */}
-          <ListItem component={Link} to="/" >
+          <ListItem component={Link} to="/" onClick={() => setIsDrawerOpen(false)}>
             {/* PRESENTATION: mui plays nicely with custom icons */}
             <ListItemIcon><SepiacIcon style={{
               display: 'inline-block',
@@ -53,16 +53,19 @@ export const MainMenu = () => {
             }} />Hi new friends!</ListItemIcon>
           </ListItem>
           <Divider />
-          <ListItem component={Link} to="/shydemo">
-            <ListItemIcon><FaceIcon />Um... Hi</ListItemIcon>
+          <ListItem component={Link} to="/shydemo" onClick={() => setIsDrawerOpen(false)}>
+            <ListItemIcon>
+              <FaceIcon />
+              Um... Hi
+            </ListItemIcon>
           </ListItem>
-          <ListItem component={Link} to="/outgoingdemo">
+          <ListItem component={Link} to="/outgoingdemo" onClick={() => setIsDrawerOpen(false)}>
             <ListItemIcon>
               <HailIcon />
               Good to see you guys!
             </ListItemIcon>
           </ListItem>
-          <ListItem component={Link} to="/treeguydemo">
+          <ListItem component={Link} to="/treeguydemo" onClick={() => setIsDrawerOpen(false)}>
             <ListItemIcon>
               <NaturePeopleIcon />
               Do you guys like trees?
