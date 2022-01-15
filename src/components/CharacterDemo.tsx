@@ -14,7 +14,7 @@ export const CharacterDemo = (props: CharacterDemoProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isResponseDelivered, setIsResponseDelivered] = useState(false)
 
-  const handleAskButtonClick = () => {
+  const askQuestion = () => {
     setIsLoading(true)
     setIsResponseDelivered(false)
     setTimeout(() => {
@@ -24,7 +24,7 @@ export const CharacterDemo = (props: CharacterDemoProps) => {
   }
   const AskButton = () => (
     <InputAdornment position="end">
-      <Button endIcon={<QuestionAnswerIcon />} onClick={handleAskButtonClick}/>
+      <Button endIcon={<QuestionAnswerIcon />} onClick={askQuestion} />
     </ InputAdornment>
   )
 
@@ -43,6 +43,11 @@ export const CharacterDemo = (props: CharacterDemoProps) => {
         <TextField
           label={'Ask a "yes or no" question'}
           variant="standard"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              askQuestion()
+            }
+          }}
           onChange={e => {
             const question = e.target.value
             setQuestion(question)
