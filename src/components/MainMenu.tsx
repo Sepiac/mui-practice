@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemIcon, Divider } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation } from 'react-router-dom'
-import { SepiacIcon } from '../icons'
+import { SepiacIcon, HypersonicIcon, BlackbirdIcon } from '../icons'
 import FaceIcon from '@mui/icons-material/Face';
 import HailIcon from '@mui/icons-material/Hail';
 import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
@@ -24,15 +24,23 @@ export const MainMenu = () => {
   const location = useLocation()
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ textAlign: 'left' }}>
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" component="div">
+          <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1 }}>
             {getPageIcon(location?.pathname)}
             MUI Practice App
           </Typography>
+          <div>
+            <IconButton color="inherit">
+              <BlackbirdIcon />
+            </IconButton>
+            <IconButton color="inherit">
+              <HypersonicIcon />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
 
